@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
-    "start": "cross-env NODE_ENV=development webpack serve"
+    "develop": "cross-env NODE_ENV=development webpack serve",
+    "start": "npm run build && cd app/ && npm start"
   },
   "dependencies": {
     "@babel/runtime": "^7.15.4",
