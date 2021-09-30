@@ -20,7 +20,18 @@
   },
   "homepage": "https://github.com/ayan4m1/system-monitor#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/eslint-parser": "^7.15.7",
+    "@babel/eslint-plugin": "^7.14.5",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-node": "^0.3.6",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.2",
-    "lint-staged": "^11.1.2"
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1"
   }
 }
