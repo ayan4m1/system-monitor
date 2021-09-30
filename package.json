@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/ayan4m1/system-monitor/issues"
   },
-  "homepage": "https://github.com/ayan4m1/system-monitor#readme"
+  "homepage": "https://github.com/ayan4m1/system-monitor#readme",
+  "devDependencies": {
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2"
+  }
 }
