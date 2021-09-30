@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "An Electron-based system monitor overlay.",
   "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/ayan4m1/system-monitor.git"
@@ -27,6 +30,7 @@
     "@commitlint/config-conventional": "^13.2.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
+    "electron": "^15.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-node": "^0.3.6",
