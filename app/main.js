@@ -1,14 +1,15 @@
 const { join } = require('path');
-const { app, BrowserWindow } = require('electron');
+const { app, ipcMain, BrowserWindow } = require('electron');
+const PowerShell = require('powershell');
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    alwaysOnTop: true,
     width: 1024,
     height: 768,
     webPreferences: {
       nodeIntegration: true,
-      backgroundThrottling: false
+      backgroundThrottling: false,
+      preload: join(__dirname, 'preload.js')
     }
   });
 
@@ -16,3 +17,20 @@ const createWindow = () => {
 };
 
 app.whenReady().then(createWindow);
+
+ipcMain.on('command', (event, command) => {
+  const shell = new PowerShell(command);
+  const output = [];
+
+  const appendOutput = (data) => output.push(data.replace(/\r\n$/, ''));
+
+  shell
+    .on('error', (error) => {
+      event.reply('error', error);
+    })
+    .on('output', appendOutput)
+    .on('error-output', appendOutput)
+    .on('end', () => {
+      event.reply('output', output);
+    });
+});
