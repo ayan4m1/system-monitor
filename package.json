@@ -2,45 +2,62 @@
   "name": "system-monitor",
   "version": "0.1.0",
   "description": "An Electron-based system monitor overlay.",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/ayan4m1/system-monitor.git"
-  },
-  "keywords": [
-    "electron",
-    "monitoring",
-    "overlay",
-    "desktop"
-  ],
   "author": "ayan4m1 <andrew@bulletlogic.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ayan4m1/system-monitor/issues"
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack",
+    "start": "cross-env NODE_ENV=development webpack serve"
   },
-  "homepage": "https://github.com/ayan4m1/system-monitor#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.15.4",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/material": "^5.0.2",
+    "classnames": "^2.3.1",
+    "core-js": "^3.18.1",
+    "normalize-scss": "^7.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0",
+    "reselect": "^4.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/eslint-parser": "^7.15.7",
-    "@babel/eslint-plugin": "^7.14.5",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.15.6",
+    "@babel/plugin-transform-regenerator": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/register": "^7.15.3",
     "@commitlint/cli": "^13.2.0",
     "@commitlint/config-conventional": "^13.2.0",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
     "commitizen": "^4.2.4",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "electron": "^15.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-import-resolver-node": "^0.3.6",
+    "eslint-import-resolver-webpack": "^0.13.1",
     "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-webpack-plugin": "^3.0.1",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "terser-webpack-plugin": "^5.2.4",
+    "webpack": "^5.54.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.3.0"
   },
   "config": {
     "commitizen": {

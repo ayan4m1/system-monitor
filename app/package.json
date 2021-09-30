@@ -1,0 +1,30 @@
+{
+  "name": "system-monitor-app",
+  "version": "0.1.0",
+  "description": "An Electron-based system monitor overlay.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-forge"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ayan4m1/system-monitor.git"
+  },
+  "keywords": [
+    "electron",
+    "monitoring",
+    "overlay",
+    "desktop"
+  ],
+  "author": "ayan4m1 <andrew@bulletlogic.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayan4m1/system-monitor/issues"
+  },
+  "homepage": "https://github.com/ayan4m1/system-monitor#readme",
+  "devDependencies": {
+    "electron": "^15.0.0",
+    "electron-forge": "^5.2.4"
+  }
+}
