@@ -50,9 +50,8 @@ export default {
   },
   plugins,
   resolve: {
-    extensions: ['.js', '.json'],
-    modules: ['node_modules', 'src'],
     alias: {
+      commands: resolve(__dirname, 'src/commands'),
       components: resolve(__dirname, 'src/components'),
       hooks: resolve(__dirname, 'src/hooks'),
       pages: resolve(__dirname, 'src/pages')
