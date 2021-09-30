@@ -1,21 +1,28 @@
 import { useEffect, useState } from 'react';
 
-export const usePowerShell = (command) => {
-  const [output, setOutput] = useState([]);
+export const usePowerShell = (pollingInterval, ...commands) => {
+  const [outputs, setOutputs] = useState([]);
 
   useEffect(() => {
-    const execute = async () => {
+    const interval = setInterval(async () => {
       try {
-        const result = await window.powershell.execute(command);
+        const outputs = (
+          await Promise.all(commands.map(window.powershell.execute))
+        )
+          .map((output) => output.join('\n').split(/,/))
+          .map((outputRows) =>
+            outputRows.map((outputRow) => outputRow.split(/=/))
+          )
+          .map((entries) => Object.fromEntries(entries));
 
-        setOutput((out) => [...out, ...result]);
+        setOutputs(outputs);
       } catch (error) {
         console.error(error);
       }
-    };
+    }, pollingInterval);
 
-    execute();
-  }, [command, setOutput]);
+    return () => clearInterval(interval);
+  });
 
-  return output;
+  return outputs;
 };
